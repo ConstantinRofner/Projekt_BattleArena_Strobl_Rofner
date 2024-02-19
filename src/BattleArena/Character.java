@@ -2,13 +2,15 @@ package BattleArena;
 public abstract class Character {
 
     private String name;
-    private int healthPoints = 100;
-    private boolean specialAbilityActive = false;
+    private int healthPoints;
+    private boolean specialAbilityActive;
     private int attackValue;
     private String specialAbility;
 
     public Character(String name) {
         this.name = name;
+        this.healthPoints = 100;
+        this.specialAbilityActive = false;
     }
     
     public int getAttackValue() {
