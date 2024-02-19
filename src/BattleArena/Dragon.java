@@ -1,11 +1,44 @@
 package BattleArena;
+
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Dragon extends Character {
+	
+	    private int feuerschaden;
 
-    private int flugkraft;
+	    public Dragon(String name) {
+	        super(name);
+	        this.feuerschaden = 10;
+	    }
 
-    public Dragon(String name, int flugkraft, int feuerkraft) {
-        super(name, 20 + (int) (Math.random() * 10));
-        this.flugkraft = flugkraft;
-    }
+	    @Override
+	    public void attack(Character enemy) {
+	        int angriffswert = ThreadLocalRandom.current().nextInt(20, 24+1);
+
+	        if (getSpecialAbilityActive()) {
+	            angriffswert -= (int) (Math.random() * 11);
+	            int healthPoints = 10;
+	        }
+
+	        enemy.getDamage(angriffswert + feuerschaden);
+	    }
+
+	    public void fliegen() {
+	        setSpecialAbilityActive(true);
+	    }
+
+	    public void landen() {
+	        setSpecialAbilityActive(false);
+	    }
+
+	    public int getFeuerschaden() {
+	        return feuerschaden;
+	    }
+
+	    public void setFeuerschaden(int feuerschaden) {
+	        this.feuerschaden = feuerschaden;
+	    }
+
+	}
 
  
