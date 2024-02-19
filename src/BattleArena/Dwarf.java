@@ -1,21 +1,19 @@
 package BattleArena;
 
-public class Dwarf {
+import java.util.concurrent.ThreadLocalRandom;
 
-	private int damageOutput;
-	private boolean abilityPossible;
+public class Dwarf extends Character{
 	
-	public int getDamageOutput() {
-		return damageOutput;
+	public Dwarf(String name) {
+		super(name);
 	}
-	public void setDamageOutput(int damageOutput) {
-		this.damageOutput = damageOutput;
+	
+	private boolean specialAbilityActive() {
+		if(this.getHealthPoints() > 50) {
+			this.setSpecialAbilityActive(true);
+		}
+		return true;
 	}
-	public boolean isAbilityPossible() {
-		return abilityPossible;
-	}
-	public void setAbilityPossible(boolean abilityPossible) {
-		this.abilityPossible = abilityPossible;
-	}
+	
 	
 }
