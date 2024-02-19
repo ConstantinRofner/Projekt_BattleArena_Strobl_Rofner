@@ -56,7 +56,7 @@ public abstract class Character {
      * @param points
      */
     public void getDamage(int points) {
-    	healthPoints -= points;
+    	this.healthPoints -= points;
     }
 
     /**
