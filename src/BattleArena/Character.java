@@ -5,7 +5,7 @@ public abstract class Character {
     private int healthPoints = 100;
     private boolean specialAbilityActive = false;
     private int attackValue;
-    private String specialability;
+    private String specialAbility;
 
     public Character(String name) {
         this.name = name;
@@ -20,11 +20,11 @@ public abstract class Character {
 	}
 
 	public String getSpecialability() {
-		return specialability;
+		return specialAbility;
 	}
 
 	public void setSpecialability(String specialability) {
-		this.specialability = specialability;
+		this.specialAbility = specialability;
 	}
 
 	public void setName(String name) {
