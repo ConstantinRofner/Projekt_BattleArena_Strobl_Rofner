@@ -15,5 +15,9 @@ public class Dwarf extends Character{
 		return true;
 	}
 	
+	private int attackValue = ThreadLocalRandom.current().nextInt(15, 25+1);
 	
+	public  int positiveAttackWithAbility(int attackValue) {
+		if(this.specialAbilityActive() == true &&  )
+	}
 }
