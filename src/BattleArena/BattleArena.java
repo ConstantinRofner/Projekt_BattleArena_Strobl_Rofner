@@ -7,5 +7,11 @@ public class BattleArena {
 	private Character Winner;
 	private boolean SelectedFighter;
 	
-	
+	public BattleArena(Character c1, Character c2) {
+		super();
+		this.c1 = c1;
+		this.c2 = c2;
+		Winner = null;
+		SelectedFighter = randomFighter();
+	}
 }
