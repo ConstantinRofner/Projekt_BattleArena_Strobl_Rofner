@@ -36,6 +36,27 @@ public class Dwarf extends Character{
 		if (this.getSpecialAbilityActive()) {
 			this.getSpecialability();
 		}
-		
+		/**
+		 * Method gives a random number if the number is between the border
+		 * @return true if it is between, false if it is not between
+		 */
+	public boolean isSpecialAbilitySuccesfull() {
+		int rand = ThreadLocalRandom.current().nextInt(0, 11);
+		if(this.getHealthPoints() <= 50 && this.getHealthPoints() > 20) {
+			if(rand > 0 && rand < 3) {
+				return true;
+			}
+		}
+		else if(this.getHealthPoints() <= 20 && this.getHealthPoints() > 10) {
+			if(rand > 0 && rand < 5) {
+				return true;
+			}
+		}
+		else if(this.getHealthPoints() <= 10) {
+			if(rand > 0 && rand < 7) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
