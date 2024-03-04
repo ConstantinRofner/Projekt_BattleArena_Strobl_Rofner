@@ -1,4 +1,5 @@
 package BattleArena;
+
 public abstract class Character {
 
     private String name;
@@ -59,12 +60,11 @@ public abstract class Character {
      */
     public abstract void getDamage(int points);
 
+    
     /**
      * method to attack a other character
      * @param enemy
      */
-    public void attack(Character enemy) {
-        // Implementierung des Angriffs
-    }
+    public abstract void attack(Character enemy);
 
 }
