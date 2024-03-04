@@ -59,4 +59,11 @@ public class Dwarf extends Character{
 		}
 		return false;
 	}
+	/**
+	 * Method deactivates special Ability
+	 */
+	public void deactivateSpecialAbility() {
+		this.setSpecialAbilityActive(false);
+		this.setAttackValue(ThreadLocalRandom.current().nextInt(15, 26));
+	}
 }
