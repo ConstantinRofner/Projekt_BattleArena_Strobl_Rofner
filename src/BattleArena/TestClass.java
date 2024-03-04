@@ -10,5 +10,7 @@ public class TestClass {
 		Dwarf z1 = new Dwarf("Erwin");
 		
 		Arena Arena = new Arena(d1, z1);
+
+		Arena.fight();
 	}
 }
