@@ -58,7 +58,7 @@ public abstract class Character {
      * method to calculate the damage
      * @param points
      */
-    public abstract void getDamage(int points);
+    public abstract void getDamage(int healthPoints);
 
     
     /**
@@ -66,5 +66,4 @@ public abstract class Character {
      * @param enemy
      */
     public abstract void attack(Character enemy);
-
 }

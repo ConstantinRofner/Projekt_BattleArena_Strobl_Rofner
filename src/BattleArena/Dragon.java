@@ -23,6 +23,11 @@ public class Dragon extends Character {
 	        enemy.getDamage(angriffswert + feuerschaden);
 	    }
 
+	    @Override
+	    public void getDamage(int healthPoints) {
+	    	if()
+	    }
+	   
 	    public void fliegen() {
 	        setSpecialAbilityActive(true);
 	    }
@@ -38,6 +43,7 @@ public class Dragon extends Character {
 	    public void setFeuerschaden(int feuerschaden) {
 	        this.feuerschaden = feuerschaden;
 	    }
+
 
 	}
 
