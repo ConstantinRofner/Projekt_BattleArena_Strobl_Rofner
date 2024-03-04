@@ -11,5 +11,11 @@ public class Dwarf extends Character{
 		this.setHealthPoints(100);
 		this.setSpecialAbilityActive(false);
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Gnome [getName()=" + getName() + ", getAttackStrength()=" + getAttackValue() + ", getHearts()="
+				+ getHealthPoints() + ", isSpecialAbilityActive()=" + getSpecialAbilityActive() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}	
 }
