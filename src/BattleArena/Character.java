@@ -57,9 +57,7 @@ public abstract class Character {
      * method to calculate the damage
      * @param points
      */
-    public void getDamage(int points) {
-    	this.healthPoints -= points;
-    }
+    public abstract void getDamage(int points);
 
     /**
      * method to attack a other character
