@@ -17,5 +17,13 @@ public class Dwarf extends Character{
 		return "Gnome [getName()=" + getName() + ", getAttackStrength()=" + getAttackValue() + ", getHearts()="
 				+ getHealthPoints() + ", isSpecialAbilityActive()=" + getSpecialAbilityActive() + ", getClass()=" + getClass()
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-	}	
+	}
+	
+	
+	/**
+	 * Method substract the points of the damage of your hearts
+	 */
+	public void getDamage(int points) {
+		this.setHealthPoints(this.getHealthPoints() - points);
+	}
 }
