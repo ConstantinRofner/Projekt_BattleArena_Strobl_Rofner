@@ -3,7 +3,8 @@ package BattleArena;
 public class TestClass {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+		Dragon d1 = new Dragon("Honig Zahn");
+		Dwarf z1 = new Dwarf("Erwin");
 	}
 }
