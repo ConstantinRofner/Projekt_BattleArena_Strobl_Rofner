@@ -11,14 +11,6 @@ public class Dwarf extends Character{
 		this.setSpecialAbilityActive(false);
 	}
 
-	@Override
-	public String toString() {
-		return "Gnome [getName()=" + getName() + ", getAttackStrength()=" + getAttackValue() + ", getHearts()="
-				+ getHealthPoints() + ", isSpecialAbilityActive()=" + getSpecialAbilityActive() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-	}
-	
-	
 	/**
 	 * Method substract the points of the damage of your hearts
 	 */
@@ -67,5 +59,12 @@ public class Dwarf extends Character{
 	public void deactivateSpecialAbility() {
 		this.setSpecialAbilityActive(false);
 		this.setAttackValue(ThreadLocalRandom.current().nextInt(15, 26));
+	}
+	
+	@Override
+	public String toString() {
+		return "Gnome [getName()=" + getName() + ", getAttackStrength()=" + getAttackValue() + ", getHearts()="
+				+ getHealthPoints() + ", isSpecialAbilityActive()=" + getSpecialAbilityActive() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 }
