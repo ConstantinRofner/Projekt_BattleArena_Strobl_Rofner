@@ -35,6 +35,7 @@ public class Dwarf extends Character{
 		if (this.getSpecialAbilityActive()) {
 			this.getSpecialability();
 		}
+	}
 		
 	/**
 	 * Method gives a random number if the number is between the border
