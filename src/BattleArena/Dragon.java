@@ -4,11 +4,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Dragon extends Character {
 	
-	    private int feuerschaden;
+	    private int bonushealth;
 
 	    public Dragon(String name) {
 	        super(name);
-	        this.feuerschaden = 10;
+	        this.bonushealth = 10;
 	    }
 
 	    @Override
@@ -17,34 +17,48 @@ public class Dragon extends Character {
 
 	        if (getSpecialAbilityActive()) {
 	            angriffswert -= (int) (Math.random() * 11);
-	            int healthPoints = 10;
 	        }
 
-	        enemy.getDamage(angriffswert + feuerschaden);
+	        enemy.getDamage(angriffswert);
 	    }
 
 	    @Override
 	    public void getDamage(int healthPoints) {
-	    	if()
+	    	
 	    }
-	   
-	    public void fliegen() {
-	        setSpecialAbilityActive(true);
-	    }
-
-	    public void landen() {
-	        setSpecialAbilityActive(false);
+	    
+	    public int getBonushealth() {
+	    	return bonushealth;
 	    }
 
-	    public int getFeuerschaden() {
-	        return feuerschaden;
+	    public void setBonushealth(int bonushealth) {
+	    	this.bonushealth = bonushealth;
 	    }
 
-	    public void setFeuerschaden(int feuerschaden) {
-	        this.feuerschaden = feuerschaden;
-	    }
+	    	/**
+	     	* Method set ability to true and give 10 bonus health points
+	     	*/
+		public boolean activateAbility() {
+				this.setSpecialAbilityActive(true);
+				this.setBonushealth(getBonushealth()+10);
+				return true;
+}
+
+			/**
+			 * Method set ability to false and removed 10 bonus health points
+			 */
+		public boolean deactivateAbility() {
+			this.setSpecialAbilityActive(false);
+			if(!((this.getBonushealth() - 10) >= 0)) {
+			this.setBonushealth(getBonushealth()-10);
+		}else {
+			this.setBonushealth(0);
+			}
+			return true;
+		}
 
 
-	}
+
+}
 
  
