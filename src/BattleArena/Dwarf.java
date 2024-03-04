@@ -4,7 +4,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Dwarf extends Character{
 
-
 	public Dwarf(String name) {
 		super(name);
 		this.setAttackValue(ThreadLocalRandom.current().nextInt(15, 26));
@@ -36,10 +35,11 @@ public class Dwarf extends Character{
 		if (this.getSpecialAbilityActive()) {
 			this.getSpecialability();
 		}
-		/**
-		 * Method gives a random number if the number is between the border
-		 * @return true if it is between, false if it is not between
-		 */
+		
+	/**
+	 * Method gives a random number if the number is between the border
+	 * @return true if it is between, false if it is not between
+	 */
 	public boolean isSpecialAbilitySuccesfull() {
 		int rand = ThreadLocalRandom.current().nextInt(0, 11);
 		if(this.getHealthPoints() <= 50 && this.getHealthPoints() > 20) {
@@ -59,6 +59,7 @@ public class Dwarf extends Character{
 		}
 		return false;
 	}
+	
 	/**
 	 * Method deactivates special Ability
 	 */
