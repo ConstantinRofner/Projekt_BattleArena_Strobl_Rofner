@@ -3,12 +3,9 @@ package BattleArena;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Dragon extends Character {
-	
-	    private int bonusHealth;
 
 	    public Dragon(String name) {
 	        super(name);
-	        this.bonusHealth = 10;
 	    }
 
 	    /**
@@ -30,21 +27,13 @@ public class Dragon extends Character {
 	    public void getDamage(int healthPoints) {
 	    	
 	    }
-	    
-	    public int getBonushealth() {
-	    	return bonusHealth;
-	    }
-
-	    public void setBonushealth(int bonusHealth) {
-	    	this.bonusHealth = bonusHealth;
-	    }
 
 	    	/**
 	     	* method to activate the SpecialAbility and give 10 bonus health to the dragon
 	     	*/
 		public boolean activateSpecialAbility() {
 				this.setSpecialAbilityActive(true);
-				this.setBonushealth(getBonushealth()+10);
+				this.setBonusHealth(getBonusHealth()+10);
 				return true;
 }
 
@@ -53,13 +42,18 @@ public class Dragon extends Character {
 			 */
 		public boolean deactivateSpecialAbility() {
 			this.setSpecialAbilityActive(false);
-			if(!((this.getBonushealth() - 10) >= 0)) {
-			this.setBonushealth(getBonushealth()-10);
+			if(!((this.getBonusHealth() - 10) >= 0)) {
+			this.setBonusHealth(getBonusHealth()-10);
 		}else {
-			this.setBonushealth(0);
+			this.setBonusHealth(0);
 			}
 			return true;
 		}
+
+			@Override
+			public String getClassName() {
+				return null;
+			}
 
 
 
