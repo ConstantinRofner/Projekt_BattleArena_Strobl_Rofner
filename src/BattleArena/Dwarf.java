@@ -4,7 +4,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Dwarf extends Character{
 
-
 	public Dwarf(String name) {
 		super(name);
 		this.setAttackValue(ThreadLocalRandom.current().nextInt(15, 26));
@@ -36,6 +35,8 @@ public class Dwarf extends Character{
 		if (this.getSpecialAbilityActive()) {
 			this.getSpecialability();
 		}
+	}	
+		
 		/**
 		 * Method gives a random number if the number is between the border
 		 * @return true if it is between, false if it is not between
@@ -58,5 +59,28 @@ public class Dwarf extends Character{
 			}
 		}
 		return false;
+	}
+	/**
+	 * method to activate the specialability if healthpoints lower than 50
+	 * @return
+	 */
+	public boolean activateSpecialAbility() {
+		if(this.getHealthPoints() < 50) {
+			this.setSpecialAbilityActive(true);
+			return true;
+		}else {
+			System.err.println("A dwarf only could use his specialability, if he has lower healthpoints than 50!!");
+			return false;
+		}
+	}
+	
+	
+	/**
+	 * method to deactivate the specialability
+	 * @return
+	 */
+	public boolean deactivateSpecialAbility() {
+		this.setSpecialAbilityActive(false);
+		return true;
 	}
 }
