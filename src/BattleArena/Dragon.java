@@ -4,13 +4,17 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Dragon extends Character {
 	
-	    private int bonushealth;
+	    private int bonusHealth;
 
 	    public Dragon(String name) {
 	        super(name);
-	        this.bonushealth = 10;
+	        this.bonusHealth = 10;
 	    }
 
+	    /**
+	     * method to calculate the attack number for the dragon..
+	     * he also can attack.
+	     */
 	    @Override
 	    public void attack(Character enemy) {
 	        int angriffswert = ThreadLocalRandom.current().nextInt(20, 24+1);
@@ -28,26 +32,26 @@ public class Dragon extends Character {
 	    }
 	    
 	    public int getBonushealth() {
-	    	return bonushealth;
+	    	return bonusHealth;
 	    }
 
-	    public void setBonushealth(int bonushealth) {
-	    	this.bonushealth = bonushealth;
+	    public void setBonushealth(int bonusHealth) {
+	    	this.bonusHealth = bonusHealth;
 	    }
 
 	    	/**
-	     	* Method set ability to true and give 10 bonus health points
+	     	* method to activate the SpecialAbility and give 10 bonus health to the dragon
 	     	*/
-		public boolean activateAbility() {
+		public boolean activateSpecialAbility() {
 				this.setSpecialAbilityActive(true);
 				this.setBonushealth(getBonushealth()+10);
 				return true;
 }
 
 			/**
-			 * Method set ability to false and removed 10 bonus health points
+			 * method to deactivate SpecialAbilitry and remove 10 bonus health from the dragon
 			 */
-		public boolean deactivateAbility() {
+		public boolean deactivateSpecialAbility() {
 			this.setSpecialAbilityActive(false);
 			if(!((this.getBonushealth() - 10) >= 0)) {
 			this.setBonushealth(getBonushealth()-10);
