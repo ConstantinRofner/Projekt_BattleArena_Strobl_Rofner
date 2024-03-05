@@ -7,6 +7,11 @@ public class Dragon extends Character {
 	    public Dragon(String name) {
 	        super(name);
 	    }
+	    
+	    @Override
+		public String getClassName() {
+			return "Dragon";
+		}
 
 	    /**
 	     * method to calculate the attack number for the dragon..
@@ -49,14 +54,6 @@ public class Dragon extends Character {
 			}
 			return true;
 		}
-
-			@Override
-			public String getClassName() {
-				return null;
-			}
-
-
-
 }
 
  

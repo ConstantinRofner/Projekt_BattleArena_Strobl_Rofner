@@ -10,7 +10,12 @@ public class Dwarf extends Character{
 		this.setHealthPoints(100);
 		this.setSpecialAbilityActive(false);
 	}
-
+	
+	@Override
+	public String getClassName() {
+		return "Dwarf";
+	}
+	
 	/**
 	 * Method substract the points of the damage of your hearts
 	 */
