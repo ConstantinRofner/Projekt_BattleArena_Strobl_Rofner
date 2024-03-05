@@ -19,8 +19,8 @@ public class Dwarf extends Character{
 	/**
 	 * Method substract the points of the damage of your hearts
 	 */
-	public void getDamage(int points) {
-		this.setHealthPoints(this.getHealthPoints() - points);
+	public void getDamage(int healthPoints) {
+		this.setHealthPoints(this.getHealthPoints() - healthPoints);
 	}
 	
 	/**

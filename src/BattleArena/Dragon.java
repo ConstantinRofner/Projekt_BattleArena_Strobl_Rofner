@@ -29,9 +29,12 @@ public class Dragon extends Character {
 	    }
 
 	    @Override
-	    public void getDamage(int healthPoints) {
-	    	
-	    }
+	    /**
+		 * Method substract the points of the damage of your hearts
+		 */
+		public void getDamage(int healthPoints) {
+			this.setHealthPoints(this.getHealthPoints() - healthPoints);
+		}
 
 	    	/**
 	     	* method to activate the SpecialAbility and give 10 bonus health to the dragon
