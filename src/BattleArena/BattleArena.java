@@ -75,6 +75,13 @@ public class BattleArena {
 	public void fight(Scanner scanner) {
 	}
 	
+	/**
+	 * method to activate one of three cases in a switch method.
+	 * In each round the characters can attack, deactivate their ability or activate their ability.
+	 * @param attacker - character initiating the attack
+	 * @param victim - character being attacked
+	 * @param scanner - object for taking user input
+	 */
 	public void activityProgress(Character attacker, Character victim, Scanner scanner) {
 		System.out.println("Spieler" + attacker.getName() + "wähle deine Aktivität.");
 		System.out.println("Aktivität 1 - attackieren");
@@ -99,6 +106,15 @@ public class BattleArena {
 			default:	
 				System.err.println("Gültige Werte eingeben!");
 		}
+	}
+
+
+	/**
+	 * information of the fighter are printed 
+	 */
+	public void informationOfFighter() {
+		System.out.println(c1);
+		System.out.println(c2);
 	}
 }
 
