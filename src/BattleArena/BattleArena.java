@@ -1,5 +1,6 @@
 package BattleArena;
 
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class BattleArena {
@@ -18,19 +19,6 @@ public class BattleArena {
 		SelectedCharacter = randomCharacter();
 	}
 	
-	/**
-	 * Method to find the character who starts 
-	 * @return
-	 */
-	private boolean randomCharacter() {
-		int random = ThreadLocalRandom.current().nextInt(1, 3); // Der Letzte Wert (3) ist exklusive!! d.h. entweder 1 oder 2.
-		if (random == 1) {
-			return true;
-		}else {
-		return false;
-	}
-}
-
 	//Getter + Setter
 	public Character getC1() {
 		return c1;
@@ -57,10 +45,18 @@ public class BattleArena {
 		SelectedCharacter = selectedCharacter;
 	}
 
-
-
-
-	
+	/**
+	 * Method to find the character who starts 
+	 * @return
+	 */
+	private boolean randomCharacter() {
+		int random = ThreadLocalRandom.current().nextInt(1, 3); // Der Letzte Wert (3) ist exklusive!! d.h. entweder 1 oder 2.
+		if (random == 1) {
+			return true;
+		}else {
+		return false;
+	}
+}
 	
 	/**
 	 * Method to find the winner of the fight
@@ -75,4 +71,34 @@ public class BattleArena {
 		return Winner;
 		}
 	}
+	
+	public void fight(Scanner scanner) {
+	}
+	
+	public void activityProgress(Character attacker, Character victim, Scanner scanner) {
+		System.out.println("Spieler" + attacker.getName() + "wähle deine Aktivität.");
+		System.out.println("Aktivität 1 - attackieren");
+		System.out.println("Aktivität 2 - Spezialfähigkeit deaktivieren");
+		System.out.println("Aktivität 3 - Spezialfähigkeit aktivieren");
+		
+		int action = scanner.nextInt();
+		switch(action) {
+			case 1:
+				attacker.attack(victim);
+				break;
+				
+			case 2:
+					attacker.deactivateSpecialAbility();
+				break;
+				
+			case 3:
+					attacker.activateSpecialAbility();
+				
+				break;
+				
+			default:	
+				System.err.println("Gültige Werte eingeben!");
+		}
+	}
 }
+
