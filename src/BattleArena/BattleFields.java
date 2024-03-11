@@ -2,11 +2,11 @@ package BattleArena;
 
 public class BattleFields {
 
-	    private Character charakter1;
-	    private Character charakter2;
+	    private Character character1;
+	    private Character character2;
 
 	    public BattleFields(Character charakter1, Character charakter2) {
-	        this.charakter1 = charakter1;
-	        this.charakter2 = charakter2;
+	        this.character1 = character1;
+	        this.character2 = character2;
 	    }
 }
