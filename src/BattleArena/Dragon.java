@@ -41,11 +41,11 @@ public class Dragon extends Character {
 				this.setSpecialAbilityActive(true);
 				this.setBonusHealth(getBonusHealth()+10);
 				return true;
-}
+		}
 
-			/**
-			 * method to deactivate SpecialAbilitry and remove 10 bonus health from the dragon
-			 */
+		/**
+		 * method to deactivate SpecialAbilitry and remove 10 bonus health from the dragon
+		 */
 		public boolean deactivateSpecialAbility() {
 			this.setSpecialAbilityActive(false);
 			if(!((this.getBonusHealth() - 10) >= 0)) {
