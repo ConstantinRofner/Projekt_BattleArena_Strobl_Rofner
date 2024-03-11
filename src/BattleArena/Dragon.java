@@ -30,10 +30,15 @@ public class Dragon extends Character {
 
 	    @Override
 	    /**
-		 * Method substract the points of the damage of your hearts
+		 * Method substract the points of the damage of the healthpoints
 		 */
-		public void getDamage(int healthPoints) {
-			this.setHealthPoints(this.getHealthPoints() - healthPoints);
+		public void getDamage(int points) {
+	    	if (this.getHealthPoints() - points < 0) {
+				this.setHealthPoints(0);
+			}
+			else {
+				this.setHealthPoints(this.getHealthPoints() - points);
+			}
 		}
 
 	    	/**
