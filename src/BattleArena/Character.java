@@ -6,7 +6,8 @@ public abstract class Character {
     private int healthPoints;
     private boolean specialAbilityActive;
     private int attackValue;
-    private String specialAbility;
+    private int bonusHealth;
+	private String specialAbility;
 
     public Character(String name) {
         this.name = name;
@@ -53,6 +54,23 @@ public abstract class Character {
     public void setSpecialAbilityActive(boolean aktiv) {
         this.specialAbilityActive = aktiv;
     }
+    
+    public int getBonusHealth() {
+		return bonusHealth;
+	}
+
+	public void setBonusHealth(int bonusHealth) {
+		this.bonusHealth = bonusHealth;
+	}
+
+	public String getSpecialAbility() {
+		return specialAbility;
+	}
+
+	public void setSpecialAbility(String specialAbility) {
+		this.specialAbility = specialAbility;
+	}
+
 
     /**
      * method to calculate the damage
@@ -66,4 +84,11 @@ public abstract class Character {
      * @param enemy
      */
     public abstract void attack(Character enemy);
+    
+    public abstract boolean activateSpecialAbility();
+    
+    public abstract boolean deactivateSpecialAbility();
+    
+    public abstract String getClassName();
+    
 }

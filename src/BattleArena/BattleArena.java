@@ -14,4 +14,10 @@ public class BattleArena {
 		Winner = null;
 		SelectedCharacter = randomCharacter();
 	}
+
+
+
+	public static void main(String[] args) {
+		
+	}
 }

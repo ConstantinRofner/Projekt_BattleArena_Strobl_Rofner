@@ -3,48 +3,60 @@ package BattleArena;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Dragon extends Character {
-	
-	    private int feuerschaden;
 
 	    public Dragon(String name) {
 	        super(name);
-	        this.feuerschaden = 10;
 	    }
+	    
+	    @Override
+		public String getClassName() {
+			return "Dragon";
+		}
 
+	    /**
+	     * method to calculate the attack number for the dragon..
+	     * he also can attack.
+	     */
 	    @Override
 	    public void attack(Character enemy) {
 	        int angriffswert = ThreadLocalRandom.current().nextInt(20, 24+1);
 
 	        if (getSpecialAbilityActive()) {
 	            angriffswert -= (int) (Math.random() * 11);
-	            int healthPoints = 10;
 	        }
 
-	        enemy.getDamage(angriffswert + feuerschaden);
+	        enemy.getDamage(angriffswert);
 	    }
 
 	    @Override
-	    public void getDamage(int healthPoints) {
-	    	if()
-	    }
-	   
-	    public void fliegen() {
-	        setSpecialAbilityActive(true);
-	    }
+	    /**
+		 * Method substract the points of the damage of your hearts
+		 */
+		public void getDamage(int healthPoints) {
+			this.setHealthPoints(this.getHealthPoints() - healthPoints);
+		}
 
-	    public void landen() {
-	        setSpecialAbilityActive(false);
-	    }
+	    	/**
+	     	* method to activate the SpecialAbility and give 10 bonus health to the dragon
+	     	*/
+		public boolean activateSpecialAbility() {
+				this.setSpecialAbilityActive(true);
+				this.setBonusHealth(getBonusHealth()+10);
+				return true;
+}
 
-	    public int getFeuerschaden() {
-	        return feuerschaden;
-	    }
-
-	    public void setFeuerschaden(int feuerschaden) {
-	        this.feuerschaden = feuerschaden;
-	    }
-
-
-	}
+			/**
+			 * method to deactivate SpecialAbilitry and remove 10 bonus health from the dragon
+			 */
+		public boolean deactivateSpecialAbility() {
+			this.setSpecialAbilityActive(false);
+			if(!((this.getBonusHealth() - 10) >= 0)) {
+			this.setBonusHealth(getBonusHealth()-10);
+		}else {
+			this.setBonusHealth(0);
+			}
+			return true;
+		}
+}
 
  
