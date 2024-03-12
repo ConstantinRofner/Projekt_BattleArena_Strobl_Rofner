@@ -34,10 +34,10 @@ public class Dwarf extends Character{
 		}
 	}	
 		
-		/**
-		 * Method gives a random number if the number is between the border
-		 * @return true if it is between, false if it is not between
-		 */
+	/**
+	 * Method gives a random number if the number is between the border
+	 * @return true if it is between, false if it is not between
+	 */
 	public boolean isSpecialAbilitySuccesfull() {
 		int rand = ThreadLocalRandom.current().nextInt(0, 11);
 		if(this.getHealthPoints() <= 50 && this.getHealthPoints() > 20) {
@@ -81,10 +81,16 @@ public class Dwarf extends Character{
 		return true;
 	}
 	
+	/**
+	 * toString -- for the console of the game
+	 */
 	@Override
 	public String toString() {
-		return "Gnome [getName()=" + getName() + ", getAttackStrength()=" + getAttackValue() + ", getHearts()="
-				+ getHealthPoints() + ", isSpecialAbilityActive()=" + getSpecialAbilityActive() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "Name des Zwergs: " + this.getName() + "\n " + "Schaden der Attacke: " + this.getAttackValue() + "\n " 
+			+ "Anzahl der Leben: "+ this.getHealthPoints() + "\n " 
+			+ "Aktivitätsstatus der Spezialfähigkeit: " + getSpecialAbilityActive() + "\n " 
+			+ "Name der Klasse: " + getClass() + "\n " 
+			+ "Hashcode: " + hashCode() + "\n ";
 	}
 }
+	
