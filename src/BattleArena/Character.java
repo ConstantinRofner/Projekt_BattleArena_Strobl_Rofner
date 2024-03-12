@@ -86,9 +86,9 @@ public abstract class Character {
     public abstract void attack(Character enemy);
     
     public abstract boolean activateSpecialAbility();
-    
     public abstract boolean deactivateSpecialAbility();
-    
     public abstract String getClassName();
+    
+    
     
 }
