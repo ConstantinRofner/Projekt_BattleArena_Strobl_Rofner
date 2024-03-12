@@ -58,22 +58,48 @@ public class BattleArena {
 	}
 }
 	
+	
 	/**
 	 * Method to find the winner of the fight
 	 * @return
 	 */
 	public Character endOfFightAndGetWinner() {
-		if(c1.getHealthPoints() == 0) {
+		if(c1.getHealthPoints() <= 0) {
 			return c1;
-		}else if(c2.getHealthPoints() == 0){
+		}else if(c2.getHealthPoints() <= 0){
 			return c2;
-		} else {
-		return Winner;
-		}
+		} else 
+			return Winner;
 	}
 	
+	/**
+	 * method where attacker and victim can fight each other
+	 * they are atticking each other til one of the 2 characters win
+	 * @param scanner
+	 */
 	public void fight(Scanner scanner) {
+			
+			Character attacker;
+			Character victim;
+			do {
+				if (this.SelectedCharacter == true) {
+					attacker = c1;
+					victim = c2;
+				} else {
+					attacker = c2;
+					victim = c1;
+				}
+				informationOfFighter();
+				activityProgress(attacker, victim, scanner);
+
+				this.setWinner(endOfFightAndGetWinner());
+				this.SelectedCharacter = !this.SelectedCharacter;
+			} while (this.getWinner() == null);
+
+			System.out.println(" !! DAS SPIEL IST BEENDET !! ");
+			System.out.println(" !! DER GEWINNER DER 3. HTL MEISTERSCHAFT IN BATTLEARENA ROYALE IST: " + this.Winner.getClassName() + " " + this.Winner.getName());
 	}
+
 	
 	/**
 	 * method to activate one of three cases in a switch method.
@@ -83,7 +109,7 @@ public class BattleArena {
 	 * @param scanner - object for taking user input
 	 */
 	public void activityProgress(Character attacker, Character victim, Scanner scanner) {
-		System.out.println("Spieler" + attacker.getName() + "wähle deine Aktivität.");
+		System.out.println("Spieler " + attacker.getName() + " wähle deine Aktivität.");
 		System.out.println("Aktivität 1 - attackieren");
 		System.out.println("Aktivität 2 - Spezialfähigkeit deaktivieren");
 		System.out.println("Aktivität 3 - Spezialfähigkeit aktivieren");
