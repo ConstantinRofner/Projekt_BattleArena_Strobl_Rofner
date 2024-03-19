@@ -26,18 +26,6 @@ public class Dragon extends Character {
 	        enemy.getDamage(angriffswert);
 	    }
 
-	    @Override
-	    /**
-		 * Method substract the points of the damage of the healthpoints
-		 */
-		public void getDamage(int points) {
-	    	if (this.getHealthPoints() - points < 0) {
-				this.setHealthPoints(0);
-			}
-			else {
-				this.setHealthPoints(this.getHealthPoints() - points);
-			}
-		}
 
 	    /**
 	     * method to activate the SpecialAbility and give 10 bonus health to the dragon
@@ -69,7 +57,6 @@ public class Dragon extends Character {
 			return "Name des Drachens: " + this.getName() + "\n " + "Schaden der Attacke: " + this.getAttackValue() + "\n " 
 					+ "Anzahl der Leben: "+ this.getHealthPoints() + "\n " 
 					+ "Aktivitätsstatus der Spezialfähigkeit: " + getSpecialAbilityActive() + "\n " 
-					+ "Name der Klasse: " + getClass() + "\n " 
-					+ "Hashcode: " + hashCode() + "\n ";
+					+ "Name der Klasse: " + getClass() + "\n ";
 			}
 }

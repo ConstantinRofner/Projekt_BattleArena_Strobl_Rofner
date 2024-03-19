@@ -16,12 +16,6 @@ public class Dwarf extends Character{
 		return "Dwarf";
 	}
 	
-	/**
-	 * Method substract the points of the damage of your hearts
-	 */
-	public void getDamage(int healthPoints) {
-		this.setHealthPoints(this.getHealthPoints() - healthPoints);
-	}
 	
 	/**
 	 * Method substracts the attack strength from the enemys hearts
@@ -89,8 +83,7 @@ public class Dwarf extends Character{
 		return "Name des Zwergs: " + this.getName() + "\n " + "Schaden der Attacke: " + this.getAttackValue() + "\n " 
 			+ "Anzahl der Leben: "+ this.getHealthPoints() + "\n " 
 			+ "Aktivitätsstatus der Spezialfähigkeit: " + getSpecialAbilityActive() + "\n " 
-			+ "Name der Klasse: " + getClass() + "\n " 
-			+ "Hashcode: " + hashCode() + "\n ";
+			+ "Name der Klasse: " + getClass() + "\n ";
 	}
 }
 	

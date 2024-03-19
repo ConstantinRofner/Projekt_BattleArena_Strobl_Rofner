@@ -72,12 +72,26 @@ public abstract class Character {
 	}
 
 
-    /**
-     * method to calculate the damage
-     * @param points
-     */
-    public abstract void getDamage(int healthPoints);
-
+	/**
+	 * Method substract the points of the damage of your hearts
+	 */
+		public void getDamage(int points) {
+			if(this.bonusHealth > 0) {
+				if(!((this.bonusHealth - points) <= 0)) {
+					this.bonusHealth -= points;
+					points = 0;
+			}else {
+					points -= this.bonusHealth;
+					this.bonusHealth = 0;
+			}
+		}
+			if(!((this.healthPoints - points) < 0)) {
+				this.healthPoints -= points;
+			}else{
+				this.healthPoints = 0;
+			}
+	}
+	
     
     /**
      * method to attack a other character
